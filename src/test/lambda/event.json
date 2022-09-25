@@ -1,0 +1,85 @@
+{
+  "requestAttributes": {
+    "x-amz-lex:accept-content-types": "PlainText,SSML",
+    "x-amz-lex:channels:platform": "Connect"
+  },
+  "sessionId": "12345678-1234-12ab-a12b-123abc456789",
+  "inputTranscript": "yes",
+  "interpretations": [
+    {
+      "intent": {
+        "slots": {
+          "useCurrentPhoneNumber": null,
+          "phoneNumber": null
+        },
+        "confirmationState": "None",
+        "name": "VanityNumberGenerator",
+        "state": "InProgress"
+      },
+      "nluConfidence": 1
+    },
+    {
+      "intent": {
+        "slots": {},
+        "confirmationState": "None",
+        "name": "FallbackIntent",
+        "state": "InProgress"
+      }
+    }
+  ],
+  "proposedNextState": {
+    "intent": {
+      "slots": {
+        "useCurrentPhoneNumber": null,
+        "phoneNumber": null
+      },
+      "confirmationState": "None",
+      "name": "VanityNumberGenerator",
+      "state": "InProgress"
+    },
+    "dialogAction": {
+      "slotToElicit": "useCurrentPhoneNumber",
+      "type": "ElicitSlot"
+    }
+  },
+  "responseContentType": "text/plain; charset=utf-8",
+  "sessionState": {
+    "sessionAttributes": {
+      "customerPhoneNumber": "+18005556789",
+      "demoPhoneNumber": "+18005552277",
+      "demoMode": "false",
+      "x-amz-lex:barge-in-enabled:*:*": "true"
+    },
+    "originatingRequestId": "1a2bcd34-1abc-1234-abc1-ab1c234567d8",
+    "intent": {
+      "slots": {
+        "useCurrentPhoneNumber": null,
+        "phoneNumber": null
+      },
+      "confirmationState": "None",
+      "name": "VanityNumberGenerator",
+      "state": "InProgress"
+    }
+  },
+  "messageVersion": "1.0",
+  "invocationSource": "DialogCodeHook",
+  "transcriptions": [
+    {
+      "resolvedContext": {
+        "intent": "VanityNumberGenerator"
+      },
+      "transcription": "yes",
+      "resolvedSlots": {},
+      "transcriptionConfidence": 0.93
+    }
+  ],
+  "inputMode": "Speech",
+  "bot": {
+    "aliasName": "vanity-number-generator-alias",
+    "aliasId": "9LNUCML9PD",
+    "name": "vanity-number-generator-bot",
+    "version": "1",
+    "localeId": "en_US",
+    "id": "KKR3SZCVXJ"
+  }
+}

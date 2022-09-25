@@ -1,0 +1,3 @@
+{
+  "app": "node -r ts-node/register -r dotenv/config bin/StackInit.ts dotenv_config_path=.env.local"
+}

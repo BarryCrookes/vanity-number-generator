@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# IDE Files
+.idea
+
+# Generated files
+.template
+cdk.out
+artifacts
+template.yml

@@ -1,0 +1,170 @@
+{
+  "modules": [
+    {
+      "id": "8dccf872-cca5-4ec2-b387-1114e0049efb",
+      "type": "Disconnect",
+      "branches": [],
+      "parameters": [],
+      "metadata": {
+        "position": {
+          "x": 742,
+          "y": 322
+        }
+      }
+    },
+    {
+      "id": "04ba0e31-8251-4cde-a019-5e6b3e6f409c",
+      "type": "PlayPrompt",
+      "branches": [
+        {
+          "condition": "Success",
+          "transition": "8dccf872-cca5-4ec2-b387-1114e0049efb"
+        },
+        {
+          "condition": "Error",
+          "transition": "8dccf872-cca5-4ec2-b387-1114e0049efb"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Text",
+          "value": "Thanks for calling.",
+          "namespace": null
+        },
+        {
+          "name": "TextToSpeechType",
+          "value": "text"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 502,
+          "y": 123
+        },
+        "useDynamic": false
+      }
+    },
+    {
+      "id": "39c0165f-9381-4dc4-9fd5-f05eee3e9957",
+      "type": "PlayPrompt",
+      "branches": [
+        {
+          "condition": "Success",
+          "transition": "8dccf872-cca5-4ec2-b387-1114e0049efb"
+        },
+        {
+          "condition": "Error",
+          "transition": "8dccf872-cca5-4ec2-b387-1114e0049efb"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Text",
+          "value": "Sorry, you call can't be handled right now. Please try again later.",
+          "namespace": null
+        },
+        {
+          "name": "TextToSpeechType",
+          "value": "text"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 503,
+          "y": 319
+        },
+        "useDynamic": false
+      }
+    },
+    {
+      "id": "4ae12ef1-8ff1-4db7-8a4d-5cbf423b5c7b",
+      "type": "GetUserInput",
+      "branches": [
+        {
+          "condition": "NoMatch",
+          "transition": "04ba0e31-8251-4cde-a019-5e6b3e6f409c"
+        },
+        {
+          "condition": "Error",
+          "transition": "39c0165f-9381-4dc4-9fd5-f05eee3e9957"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Text",
+          "value": "Do you want to get vanity number suggestions for the phone number you are currently using?",
+          "namespace": null
+        },
+        {
+          "name": "TextToSpeechType",
+          "value": "text"
+        },
+        {
+          "name": "BotAliasArn",
+          "value": "arn:aws:lex:us-east-1:090873815259:bot-alias/EQQAJSWHYD/NJ1GON9BMJ",
+          "namespace": null
+        },
+        {
+          "name": "LexVersion",
+          "value": "V2"
+        },
+        {
+          "name": "Parameter",
+          "key": "customerPhoneNumber",
+          "value": "Customer Number",
+          "namespace": "System"
+        },
+        {
+          "name": "Parameter",
+          "key": "demoPhoneNumber",
+          "value": "+18005552277",
+          "namespace": null
+        },
+        {
+          "name": "Parameter",
+          "key": "demoMode",
+          "value": "false",
+          "namespace": null
+        },
+        {
+          "name": "Parameter",
+          "key": "x-amz-lex:barge-in-enabled:*:*",
+          "value": "true",
+          "namespace": null
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 245,
+          "y": 155
+        },
+        "conditionMetadata": [],
+        "useDynamic": false,
+        "dynamicMetadata": {
+          "customerPhoneNumber": true,
+          "demoPhoneNumber": false,
+          "demoMode": false,
+          "x-amz-lex:barge-in-enabled:*:*": false
+        },
+        "useLexBotDropdown": false,
+        "useDynamicLexBotArn": false
+      },
+      "target": "Lex"
+    }
+  ],
+  "version": "1",
+  "start": "4ae12ef1-8ff1-4db7-8a4d-5cbf423b5c7b",
+  "metadata": {
+    "entryPointPosition": {
+      "x": 108,
+      "y": 139
+    },
+    "snapToGrid": false,
+    "name": "vanity-number-generator-flow",
+    "description": "Offer caller vanity number suggestions for their phone number",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": "fa3012017789a10b5c6dc1989a53d3daaa379523737ed0d7513368435bc34b9e"
+  },
+  "type": "contactFlow"
+}

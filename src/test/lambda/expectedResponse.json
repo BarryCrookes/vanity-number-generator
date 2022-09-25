@@ -1,0 +1,30 @@
+{
+  "messages": [
+    {
+      "content": "<speak>Unfortunately, a valid vanity number could not be generated for your phone number, <say-as interpret-as=\"telephone\">+18005556789</say-as>.</speak>",
+      "contentType": "SSML"
+    }
+  ],
+  "sessionId": "12345678-1234-12ab-a12b-123abc456789",
+  "sessionState": {
+    "dialogAction": {
+      "fulfillmentState": "Fulfilled",
+      "type": "Close"
+    },
+    "intent": {
+      "slots": {
+        "useCurrentPhoneNumber": null,
+        "phoneNumber": null
+      },
+      "confirmationState": "None",
+      "name": "VanityNumberGenerator",
+      "state": "InProgress"
+    },
+    "sessionAttributes": {
+      "customerPhoneNumber": "+18005556789",
+      "demoPhoneNumber": "+18005552277",
+      "demoMode": "false",
+      "x-amz-lex:barge-in-enabled:*:*": "true"
+    }
+  }
+}

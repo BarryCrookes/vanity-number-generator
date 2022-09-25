@@ -1,0 +1,9 @@
+node_modules
+dist
+
+# Ignoring generated files
+*.d.ts
+cdk.out/
+bin/*.js
+lib/**/*.js
+src/test/stack/**/*.spec.js
