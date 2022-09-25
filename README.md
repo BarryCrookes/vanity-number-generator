@@ -108,8 +108,15 @@ They also had the same limitation of words as I faced, as you have to provide th
 
 ## Improvements
 
+### Vanity number generation
+- More complex logic to generate better vanity numbers
+- Let caller provide alternate phone number
+- Let the caller define the length on the vanity number
+
 ### Coding standards
-Commonly used code should be extracted into util packages.
+- Commonly used code should be extracted into util packages
+- Better error handling
+- Input data validation
 
 ### CDK Structure
 I would like to split each resource into separate nested stacks. I believe this would help with the readability of the final cdk code but would've taken extra time to implement.
@@ -117,7 +124,7 @@ I would like to split each resource into separate nested stacks. I believe this 
 ### Tests
 There are some unit tests included, but we really should have a more comprehensive test suite including:
 - Local integration tests using `lambda-local` to trigger the lambda 
-- Integration tests using `Cyara` to call the Connect flow
+- Integration tests using `Cyara` to call the Connect flow phone number
 - CDK tests using `@aws-cdk/assert` to test the stack definitions
 
 ### Security
@@ -126,3 +133,9 @@ All resources in the stack have restricted access to only the actions they need 
 We could also protect the Connect flow from being attacked by malicious callers hammering the phone line by:
 - identify callers
 - restrict what phone numbers allowed to call the flow
+
+### Lambda Layer
+Node packages could be moved to a lambda layer to improve lambda load times, decrease artifact size, and share code with other lambdas. 
+
+### Connect deploy via CDK
+An alternative to the custom resource option would be to use CDK to configure Connect.
