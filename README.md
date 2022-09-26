@@ -139,3 +139,6 @@ Node packages could be moved to a lambda layer to improve lambda load times, dec
 
 ### Connect deploy via CDK
 An alternative to the custom resource option would be to use CDK to configure Connect.
+
+# Resiliency
+Deploy stack and flow to multiple regions so we can still handle calls in the event of an AWS outage in our main region. 
